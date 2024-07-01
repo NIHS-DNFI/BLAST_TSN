@@ -11,4 +11,4 @@ BLAST_TSG is licensed under MIT License.
 
 
 ## Citation
-Miyu Sugino, Jumpei Narushima, Keisuke Soga, Satoko Yoshiba and Norihito Shibata. J. Agric. Foof Chem. Strategy for target specific gene sequence search using a comparative genomics tool and its application to food testing. (2024) doi: 
+In preparation. 
