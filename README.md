@@ -3,9 +3,7 @@ BLAST_TGS is a Bash scripts that semi-automatically searches for target-specific
 
 ## Usage
 ### Requirements
-OrthoFinder
-BLAST
-Seqkit
+
 
 
 ## License
