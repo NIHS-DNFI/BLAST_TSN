@@ -14,7 +14,7 @@ At the time of release, the related software was tested using the following vers
 Some part of script changes are required depending on the data the user is inputting.
 
 ## License
-BLAST_TSG is licensed under GPL v3 License. 
+BLAST_TSG is licensed under GPL v3.0. 
 
 
 ## Citation
