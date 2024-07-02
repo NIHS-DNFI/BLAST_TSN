@@ -25,10 +25,34 @@ Extract target-specific sequence from target-specific genes. All genomes used in
 BLAST2 is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST3 or later for other target species. Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
 
 ### 4. Rank the genes or exons for the most target-specific sequences designed.
-As a guide to one of the genes to target, a ranking of genes designed with many target-specific sequences is first displayed.
+After BLAST step, genes are ranked by the number of target-specific sequences, and record in ```./result.log```.
+```
+******************************
+
+    Specific gene search result
+
+    Specific genes: 33
+    Primer candidates:  388
+
+    Top5 genes with many primer candidates designed
+     47 >Cp4.1LG04g07340.1
+     45 >Cp4.1LG04g07350.1
+     35 >Cp4.1LG04g07360.1
+     33 >Cp4.1LG04g07300.1
+     29 >Cp4.1LG15g08640.1
+
+    Orthogroup
+        OG0024562
+OG0024562
+OG0024562
+OG0024562
+OG0024552
+ 
+******************************
+```
 
 ## License
-BLAST_TSG is licensed under GPL v3.0. 
+BLAST_TSG is licensed under GPL v3.0.
 
 ## Citation
-In preparation. 
+In preparation.
