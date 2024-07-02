@@ -22,7 +22,7 @@ The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` fi
 Extract target-specific sequence from target-specific genes. All genomes used in analysis need to be made blast database in advance. BLAST1 is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
 
 ### 3. BLAST for target species to extract target-specific sequences.
-BLAST2 is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST3 or later for other target species. Finally, extracted candidate sequences of primers are recorded in ```primer_candidates_target_specific_final.txt```.
+BLAST2 is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST3 or later for other target species. Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
 
 ### 4. Rank the genes or exons for the most target-specific sequences designed.
 As a guide to one of the genes to target, a ranking of genes designed with many target-specific sequences is first displayed.
