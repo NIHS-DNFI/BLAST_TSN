@@ -42,6 +42,9 @@ Here, blastdb name that are target species should be specified in ```-db```.
 <br>
 For group-specific sequence extraction, run BLAST3 or later for other target species.
 <br>
+### 4. Rank the genes or exons for the most target-specific sequences designed.
+
+<br>
 ## License
 BLAST_TSG is licensed under GPL v3.0. 
 
