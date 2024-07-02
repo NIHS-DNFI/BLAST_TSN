@@ -15,7 +15,7 @@ At the time of release, the related software was tested using the following vers
 Run OrthoFinder with amino acid sequences of target and non-target species as input files.
 
 ### BLAST_TSG part
-Target-specific genes are extracted using Orthogroups.GeneCount.tsv file from OrthoFinder.
+Target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` file from OrthoFinder.
 <br>
 /OrthoFinder/Result_XX/Orthogroups/Orthogroups.GeneCount.tsv output from OrthoFinder.
 <br>
