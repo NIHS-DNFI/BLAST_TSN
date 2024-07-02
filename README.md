@@ -22,16 +22,22 @@ Target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` file f
 <br>
 Change line 7 of script to ```$X==0``` for non-target species, and ```$X>=1``` for target species, depending on the data input by the users.
 <br>
-If you need high-copied target, increase the value at target species (e.x. ```$X>=3```).
+If you need high-copied target, increase the value at target species (e.g. ```$X>=3```).
+<br>
+Change the CDS sequence on 27 and 35 lines depend on your target species.
 <br>
 ### 2. BLAST for non-target species to exclude non-specific sequence.
+Extract target-specific sequence from target-specific genes.
+<br>
+All genomes used in analysis need to be made blast database in advance.
+<br>
+BLAST1 is performed for non-target species to exclude non-specific sequence.
+<br>
+Here, blastdb name should be specified in ```-db```.
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 ## License
 BLAST_TSG is licensed under GPL v3.0. 
 
