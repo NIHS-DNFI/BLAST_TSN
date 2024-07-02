@@ -28,25 +28,25 @@ BLAST2 is performed for target species to extract target-specific sequences. Her
 After BLAST step, genes are ranked by the number of target-specific sequences, and record in ```./result.log```.
 ```
 ******************************
-
+ 
     Specific gene search result
-
-    Specific genes: 33
-    Primer candidates:  388
+ 
+    Specific genes: 27
+    Primer candidates:  256
 
     Top5 genes with many primer candidates designed
-     47 >Cp4.1LG04g07340.1
-     45 >Cp4.1LG04g07350.1
-     35 >Cp4.1LG04g07360.1
-     33 >Cp4.1LG04g07300.1
-     29 >Cp4.1LG15g08640.1
+     35 >CmoCh03G001390.1
+     30 >CmoCh18G007840.1
+     26 >CmoCh19G001710.1
+     19 >CmoCh14G011590.1
+     16 >CmoCh03G001380.1
 
-    Orthogroup
-        OG0024562
-OG0024562
-OG0024562
-OG0024562
-OG0024552
+    Orthogroup of the Top5 genes classified
+     1 OG0018538
+     2 OG0018538
+     3 OG0028273
+     4 OG0019922
+     5 OG0018538
  
 ******************************
 ```
