@@ -16,10 +16,10 @@ Run OrthoFinder with amino acid sequences of target and non-target species as in
 
 ### BLAST_TSG part
 ### 1. Extract the target-specific genes.
-The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` file from OrthoFinder. ```Orthogroups.GeneCount.tsv``` is genellary output to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of script to ```$X==0``` for the non-target species, and ```$X>=1``` for the target species, depending on the data input by the users. If you need high-copied targets, increase the value at target species (e.g. ```$X>=3```). Change the CDS sequence on 27 and 35 lines depend on your target species.
+The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` file from OrthoFinder. ```Orthogroups.GeneCount.tsv``` is genellary output to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copied targets, increase the value at target species (e.g. ```$X>=5```).
 
 ### 2. BLAST for the non-target species to exclude the non-specific sequences.
-Extract target-specific sequence from target-specific genes. All genomes used in analysis need to be made blast database in advance. BLAST1 is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
+Extract target-specific sequence from target-specific genes. BLAST1 is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
 
 ### 3. BLAST for target species to extract target-specific sequences.
 BLAST2 is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST3 or later for other target species. Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
@@ -54,6 +54,7 @@ After BLAST step, genes are ranked by the number of target-specific sequences, a
 ### 5. Rank the exons for the most target-specific sequences designed.
 Finally, extract the exon sequences of the top 5 genes and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with high cover rate) may potentially be appropriate for targeting by qPCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) cause over-estimation of cover rate (%). If known in advance, exon ranking should be run by excluding it from the top5 genes.
 ```
+Before ex splicing varints
 ******************************
 
     No. of primers  Chr         Start   End     Gene ID Theor   Cover rate (%)
@@ -62,6 +63,18 @@ Finally, extract the exon sequences of the top 5 genes and ranked by the number 
      3     279 AP014957.1       1178202 1178683 BAS70124.1 92 303.261
      4     273 AP014957.1       1497686 1499131 BAS70182.1 285 95.7895
      5     213 AP014957.1       1176905 1177273 BAS70127.1 69 308.696
+
+******************************
+
+After ex splicing varints
+******************************
+
+    No. of primers  Chr         Start       End         Gene ID Theor   Cover rate (%)
+     1     273 AP014957.1       1497686     1499131     BAS70182.1 285 95.7895
+     2     175 AP014957.1       42685394    42686203    BAS76397.1 158 110.759
+     3     160 AP014957.1       28495251    28496112    BAS73789.1 168 95.2381
+     4      93 AP014957.1       1178202     1178683     BAS70124.1 92  101.087
+     5      89 AP014957.1       1172179     1172687     BAS70124.1 97  91.7526
 
 ******************************
 ```
