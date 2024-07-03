@@ -66,7 +66,8 @@ Before ex splicing varints
 
 ******************************
 ```
-
+<br>
+```
 After ex splicing varints
 ******************************
 
