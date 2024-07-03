@@ -24,30 +24,45 @@ Extract target-specific sequence from target-specific genes. All genomes used in
 ### 3. BLAST for target species to extract target-specific sequences.
 BLAST2 is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST3 or later for other target species. Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
 
-### 4. Rank the genes or exons for the most target-specific sequences designed.
+### 4. Rank the genes for the most target-specific sequences designed.
 After BLAST step, genes are ranked by the number of target-specific sequences, and record in ```./result.log```.
 ```
 ******************************
- 
-    Specific gene search result
- 
-    Specific genes: 27
-    Primer candidates:  256
 
-    Top5 genes with many primer candidates designed
-     35 >CmoCh03G001390.1
-     30 >CmoCh18G007840.1
-     26 >CmoCh19G001710.1
-     19 >CmoCh14G011590.1
-     16 >CmoCh03G001380.1
+    Target-specific gene search result
 
-    Orthogroup of the Top5 genes classified
-     1 OG0018538
-     2 OG0018538
-     3 OG0028273
-     4 OG0019922
-     5 OG0018538
- 
+    Target-specific genes: 46
+    Primer candidates:  8093
+
+    Top 5 genes ranked by designed primer candidates
+    536 >lcl|AP014957.1_cds_BAS70124.1_217
+    463 >lcl|AP014957.1_cds_BAS70126.1_219
+    370 >lcl|AP014957.1_cds_BAS70127.1_220
+    329 >lcl|AP014957.1_cds_BAS70182.1_275
+    327 >lcl|AP014957.1_cds_BAS73789.1_3882
+
+    Orthogroup of the Top5 genes belonging
+     1 OG0001175
+     2 OG0001175
+     3 OG0001175
+     4 OG0001457
+     5 OG0001549
+
+******************************
+```
+
+### 5. Rank the exons for the most target-specific sequences designed.
+Finally, 
+```
+******************************
+
+No. of primers  Chr     Start   End     Gene ID Theor   Cover rate (%)
+1     279 AP014957.1    1178202 1178683 BAS70127.1 92 303.261
+2     279 AP014957.1    1178202 1178683 BAS70126.1 92 303.261
+3     279 AP014957.1    1178202 1178683 BAS70124.1 92 303.261
+4     273 AP014957.1    1497686 1499131 BAS70182.1 285 95.7895
+5     213 AP014957.1    1176905 1177273 BAS70127.1 69 308.696
+
 ******************************
 ```
 
