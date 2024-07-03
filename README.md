@@ -52,16 +52,16 @@ After BLAST step, genes are ranked by the number of target-specific sequences, a
 ```
 
 ### 5. Rank the exons for the most target-specific sequences designed.
-Finally, extract the exon sequences of the top 5 genes and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with high cover rate) may potentially be appropriate for targeting by qPCR.
+Finally, extract the exon sequences of the top 5 genes and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with high cover rate) may potentially be appropriate for targeting by qPCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) cause over-estimation of cover rate (%). If known in advance, exon ranking should be run by excluding it from the top5 genes.
 ```
 ******************************
 
-No. of primers  Chr     Start   End     Gene ID Theor.  Cover rate (%)
-1     279 AP014957.1    1178202 1178683 BAS70127.1 92 303.261
-2     279 AP014957.1    1178202 1178683 BAS70126.1 92 303.261
-3     279 AP014957.1    1178202 1178683 BAS70124.1 92 303.261
-4     273 AP014957.1    1497686 1499131 BAS70182.1 285 95.7895
-5     213 AP014957.1    1176905 1177273 BAS70127.1 69 308.696
+    No. of primers  Chr         Start   End     Gene ID Theor   Cover rate (%)
+     1     279 AP014957.1       1178202 1178683 BAS70127.1 92 303.261
+     2     279 AP014957.1       1178202 1178683 BAS70126.1 92 303.261
+     3     279 AP014957.1       1178202 1178683 BAS70124.1 92 303.261
+     4     273 AP014957.1       1497686 1499131 BAS70182.1 285 95.7895
+     5     213 AP014957.1       1176905 1177273 BAS70127.1 69 308.696
 
 ******************************
 ```
