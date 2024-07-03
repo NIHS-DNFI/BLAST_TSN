@@ -1,1 +1,5 @@
+You need to download the following IRGSP1.0 dataset to run the test data.
+GCA_001433935.1_IRGSP-1.0_genomic.fna
+cds_from_genomic.fna
+genomic.gff
 
