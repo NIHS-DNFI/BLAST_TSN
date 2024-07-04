@@ -470,7 +470,7 @@ echo \
 
     Target-specific exon search result
 
-    No. of primers  Chr         Start   End     Gene ID Theor   Cover rate (%)
+    No. HIT Chromosome   Start      End      Protein ID   Theor Cover rate (%)
 $exon_ranking
 
 ******************************" \
