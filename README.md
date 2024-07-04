@@ -69,7 +69,7 @@ Before ex splicing varints
 
     Target-specific exon search result
 
-    No. of primers  Chr    Start      End     Protein ID    Theor Cover rate (%)
+     No. HIT Chromosome   Start      End      Protein ID   Theor Cover rate (%)
      1   279 AP014957.1    1178202    1178683 BAS70127.1    92   303.3
      2   279 AP014957.1    1178202    1178683 BAS70126.1    92   303.3
      3   279 AP014957.1    1178202    1178683 BAS70124.1    92   303.3
@@ -85,12 +85,12 @@ After ex splicing varints
 
     Target-specific exon search result
 
-    No. of primers  Chr    Start      End     Protein ID    Theor Cover rate (%)
-     1   273 AP014957.1    1497686    1499131 BAS70182.1   285    95.8
-     2   175 AP014957.1   42685394   42686203 BAS76397.1   158   110.8
-     3   160 AP014957.1   28495251   28496112 BAS73789.1   168    95.2
-     4    93 AP014957.1    1178202    1178683 BAS70124.1    92   101.1
-     5    89 AP014957.1    1172179    1172687 BAS70124.1    97    91.8
+    No. HIT Chromosome   Start      End      Protein ID   Theor Cover rate (%)
+    1   273 AP014957.1    1497686    1499131 BAS70182.1   285    95.8
+    2   175 AP014957.1   42685394   42686203 BAS76397.1   158   110.8
+    3   160 AP014957.1   28495251   28496112 BAS73789.1   168    95.2
+    4    93 AP014957.1    1178202    1178683 BAS70124.1    92   101.1
+    5    89 AP014957.1    1172179    1172687 BAS70124.1    97    91.8
 
 ******************************
 ```
