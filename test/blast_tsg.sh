@@ -371,7 +371,7 @@ for f in {1..5}
 seqkit \
     faidx \
     --infile-list ./exon_ranking/top5_exon_pos.txt \
-    ./GCA_001433935.1_IRGSP-1.0_genomic.fna \
+    ./GCA_001433935.1_IRGSP-1.0_genomic_chr1_w0.fna \
     > ./exon_ranking/top5_exon.fasta
 
 #filter <90 nt of the exon
