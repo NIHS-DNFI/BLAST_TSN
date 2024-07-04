@@ -16,13 +16,13 @@ mkdir ./exon_ranking
 #grep the target-specific Orthogroups ID
 awk \
     '$2>=5 && $3==0 && $4==0 && $5==0 && $6==0 && $7==0 && $8==0 && $9==0 && $10==0 && $11==0 && $12==0 {print $1}' \
-    /home/BLAST_TSG/test_data/rice/v1/OrthoFinder/Results_Jul03/Orthogroups/Orthogroups.GeneCount.tsv \
+    ./Orthogroups.GeneCount.tsv \
     > ./target_specific_orthogroups.tsv
 
 #grep the target-specific gene ID
 grep \
     -f ./target_specific_orthogroups.tsv \
-    /home/BLAST_TSG/test_data/rice/v1/OrthoFinder/Results_Jul03/Orthogroups/Orthogroups.txt \
+    ./Orthogroups.txt \
     | awk \
         '{$1=""; print}' \
         | awk \
@@ -247,20 +247,26 @@ stat_genes=$(awk \
                 'gsub("_sliding.*","")' \
                 ./primer_candidate_target_specific_final.txt \
                 | uniq \
-                | wc -l)
+                | wc \
+                    -l)
 
 stat_primers=$(grep \
                 ">" \
                 ./primer_candidate_target_specific_final.txt \
-                | wc -l)
+                | wc \
+                    -l)
 
 top5=$(awk \
         'gsub("_sliding.*","")' \
         ./primer_candidate_target_specific_final.txt \
-        | uniq -c \
-        | sort -nr \
-        | head -5 \
-        | tee ./gene_ranking/top5.txt)
+        | uniq \
+            -c \
+            | sort \
+                -nr \
+                | head \
+                    -5 \
+                    | tee \
+                        ./gene_ranking/top5.txt)
 
 orthogroup=$(for f in 1 2 3 4 5
         do
@@ -274,7 +280,7 @@ orthogroup=$(for f in 1 2 3 4 5
                             > ./gene_ranking/top5_${f}.txt
                 grep \
                     -f ./gene_ranking/top5_${f}.txt \
-                    /home/BLAST_TSG/test_data/rice/v1/OrthoFinder/Results_Jul03/Orthogroups/Orthogroups.txt \
+                    ./Orthogroups.txt \
                     > ./gene_ranking/top5_grep_${f}.txt
         done
 
@@ -300,7 +306,8 @@ $top5
 $orthogroup
  
 ******************************" \
-    | tee ./gene_ranking_result.log
+    | tee \
+        ./gene_ranking_result.log
 
 #exon_ranking
 #extract CDS and exon positions from the genome annotation file.
@@ -353,11 +360,11 @@ for f in {1..5}
                     's/ID=exon-//g' \
                     | sed \
                         's/ID=cds-//g' \
+                        | sed \
+                            's/-.*//g' \
                             | sed \
-                                's/-.*//g' \
-                                | sed \
-                                    's/;.*//g' \
-                                    > ./exon_ranking/top5_${f}_exon_gene_ID.txt
+                                's/;.*//g' \
+                                > ./exon_ranking/top5_${f}_exon_gene_ID.txt
     done
 
 #extract the exon sequences of the top5 genes
@@ -416,9 +423,11 @@ for f in {1..5}
         cat \
             ./exon_ranking/result_top5_exon_m90_${f}_v3.txt \
             | sort \
-            | uniq -c \
-            | sort -nr \
-            > ./exon_ranking/result_top5_exon_m90_${f}_v4.txt
+            | uniq \
+                -c \
+                | sort \
+                    -nr \
+                    > ./exon_ranking/result_top5_exon_m90_${f}_v4.txt
     done
 
 cat \
