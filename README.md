@@ -1,5 +1,5 @@
 # BLAST_TSG (Target-Specific Gene)
-BLAST_TGS is a Bash scripts that semi-automatically searches for target-specific gene sequences based on data output from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
+BLAST_TGS is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
 
 ## Installation
 At the time of release, the related software was tested using the following versions:
@@ -12,12 +12,22 @@ At the time of release, the related software was tested using the following vers
 
 ## Usage
 ### OrthoFinder part
-Run OrthoFinder with amino acid sequences of target and non-target species as input files.
+First, OrthiFinder is used to search for target-specific genes. Run OrthoFinder with amino acid sequences of target and non-target species as input files.
 
 ### BLAST_TSG part
 ### 1. Extract the target-specific genes.
-The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` file from OrthoFinder. ```Orthogroups.GeneCount.tsv``` is genellary output to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copied targets, increase the value at target species (e.g. ```$X>=5```).
-
+The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` and ```Orthogroups.txt``` files from OrthoFinder. These files are generally outputted to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copied targets, increase the value at target species.
+```
+Orthogroup	protein_Os01g_w0	protein_Os02g_w0	protein_Os03g_w0	protein_Os04g_w0	protein_Os05g_w0	protein_Os06g_w0	protein_Os07g_w0	protein_Os08g_w0	protein_Os09g_w0	protein_Os10g_w0	protein_Os11g_w0	protein_Os12g_w0	Total
+OG0000840	8	0	0	0	0	0	0	0	0	0	0	0	8
+OG0001175	6	0	0	0	0	0	0	0	0	0	0	0	6
+OG0001196	6	0	0	0	0	0	0	0	0	0	0	0	6
+OG0001209	6	0	0	0	0	0	0	0	0	0	0	0	6
+OG0001457	5	0	0	0	0	0	0	0	0	0	0	0	5
+OG0001549	5	0	0	0	0	0	0	0	0	0	0	0	5
+OG0001616	5	0	0	0	0	0	0	0	0	0	0	0	5
+OG0001619	5	0	0	0	0	0	0	0	0	0	0	0	5
+```
 ### 2. BLAST for the non-target species to exclude the non-specific sequences.
 Extract target-specific sequence from target-specific genes. BLAST1 is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
 
@@ -57,7 +67,9 @@ Finally, extract the exon sequences of the top 5 genes and ranked by the number 
 Before ex splicing varints
 ******************************
 
-    No. of primers  Chr         Start   End     Gene ID Theor   Cover rate (%)
+    Target-specific exon search result
+
+    No. of primers  Chr         Start   End     Protein ID Theor   Cover rate (%)
      1     279 AP014957.1       1178202 1178683 BAS70127.1 92 303.261
      2     279 AP014957.1       1178202 1178683 BAS70126.1 92 303.261
      3     279 AP014957.1       1178202 1178683 BAS70124.1 92 303.261
@@ -70,6 +82,8 @@ Before ex splicing varints
 ```
 After ex splicing varints
 ******************************
+
+    Target-specific exon search result
 
     No. of primers  Chr         Start       End         Gene ID Theor   Cover rate (%)
      1     273 AP014957.1       1497686     1499131     BAS70182.1 285 95.7895
