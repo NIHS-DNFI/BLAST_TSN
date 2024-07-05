@@ -52,11 +52,11 @@ After BLAST step, genes are ranked by the number of target-specific sequences, a
     327 >lcl|AP014957.1_cds_BAS73789.1_3882
 
     Orthogroup of the Top5 genes belonging
-     1 OG0001175
-     2 OG0001175
-     3 OG0001175
-     4 OG0001457
-     5 OG0001549
+    1 OG0001175
+    2 OG0001175
+    3 OG0001175
+    4 OG0001457
+    5 OG0001549
 
 ******************************
 ```
@@ -69,12 +69,12 @@ Before ex splicing varints
 
     Target-specific exon search result
 
-     No. HIT Chromosome   Start      End      Protein ID   Theor Cover rate (%)
-     1   279 AP014957.1    1178202    1178683 BAS70127.1    92   303.3
-     2   279 AP014957.1    1178202    1178683 BAS70126.1    92   303.3
-     3   279 AP014957.1    1178202    1178683 BAS70124.1    92   303.3
-     4   273 AP014957.1    1497686    1499131 BAS70182.1   285    95.8
-     5   213 AP014957.1    1176905    1177273 BAS70127.1    69   308.7
+    No. HIT Chromosome   Start      End      Protein ID   Theor Cover rate (%)
+    1   279 AP014957.1    1178202    1178683 BAS70127.1    92   303.3
+    2   279 AP014957.1    1178202    1178683 BAS70126.1    92   303.3
+    3   279 AP014957.1    1178202    1178683 BAS70124.1    92   303.3
+    4   273 AP014957.1    1497686    1499131 BAS70182.1   285    95.8
+    5   213 AP014957.1    1176905    1177273 BAS70127.1    69   308.7
 
 ******************************
 ```
