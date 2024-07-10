@@ -1,4 +1,4 @@
-# BLAST_TSG (Target-Specific Gene)
+# BLAST_t-SPEG (Target-SPEcific Gene)
 BLAST_TGS is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
 
 ## Installation
