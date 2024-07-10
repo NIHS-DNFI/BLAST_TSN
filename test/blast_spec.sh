@@ -483,4 +483,5 @@ echo \
 $exon_ranking
 
 ******************************" \
-    | tee exon_ranking_result.log
+    | tee \
+        exon_ranking_result.log
