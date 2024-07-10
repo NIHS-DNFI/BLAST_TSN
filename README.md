@@ -1,5 +1,5 @@
-# BLAST_SPEC (target-SPECific gene)
-BLAST_SPEC is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
+# BLAST_TSG (Target-Specific Gene)
+BLAST_TSG is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
 
 ## Installation
 At the time of release, the related software was tested using the following versions:
@@ -14,7 +14,7 @@ At the time of release, the related software was tested using the following vers
 ### OrthoFinder part
 First, OrthiFinder is used to search for target-specific genes. Run OrthoFinder with amino acid sequences of target and non-target species as input files.
 
-### BLAST_SPEC part
+### BLAST_TSG part
 ### 1. Extract the target-specific genes.
 The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` and ```Orthogroups.txt``` files from OrthoFinder. These files are generally outputted to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copied targets, increase the value at target species.
 ```
@@ -96,7 +96,7 @@ After ex splicing varints
 ```
 
 ## License
-BLAST_SPEC is licensed under GPL v3.0.
+BLAST_TSG is licensed under GPL v3.0.
 
 ## Citation
 In preparation.
