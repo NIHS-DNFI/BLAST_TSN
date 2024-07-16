@@ -47,7 +47,8 @@ grep \
     > ./target_specific_gene_cds_sequences.fasta
 
 #get 25 bp sliding sequences of the target-specific gene
-seqkit sliding \
+seqkit \
+    sliding \
     -j 48 \
     -s 5 \
     -W 25 \
