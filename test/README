@@ -1,5 +1,11 @@
-You need to download the following IRGSP1.0 dataset to run the test data.
-GCA_001433935.1_IRGSP-1.0_genomic.fna
-cds_from_genomic.fna
-genomic.gff
+In this test data, we use rice chr1 to chr12 to extract chr1-specific sequences.
+We performed the OrthoFinder using the protein files divided by rice chr1 to chr12 for test data.
+You can confirm the result in Orthogroups.GeneCount.tsv that pre-filtered to save data volume (i.e. Orthogroups are filtered in chr1-specific and more than 5 copies).
+
+Put all test data in your working directory, and decompress genomic fasta.gz.
+Some change of script may need depending on your environment.
+First, change the following data paths if you call other than the current directory: Orthogroups.GeneCount.tsv, Orthogroups.txt, cds_from_genomic_w0.fna, genomic_CDS_exon.gff, and chr1 to chr12 genomic fna.
+Second, change num (number of threads) depending on your environment.
+
+
 
