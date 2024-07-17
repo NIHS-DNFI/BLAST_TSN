@@ -5,10 +5,10 @@ BLAST_TSG is a Bash script that semi-automatically searches for target-specific 
 ## Requirement
 At the time of release, the related software was tested using the following versions:
 <br>
-* OrtoFinder v2.5.5
-* FASTX_Toolkit v0.0.14
-* Seqkit v2.6.1
-* blast v2.15.0
+* OrthoFinder v2.5.5
+* FASTX-Toolkit v0.0.14
+* SeqKit v2.6.1
+* BLAST+ v2.15.0
 * bedtools v2.31.1
 
 ## Usage
@@ -65,7 +65,7 @@ After BLAST step, genes are ranked by the number of target-specific sequences, a
 ### 5. Rank the exons for the most target-specific sequences designed.
 Finally, extract the exon sequences of the top 5 genes and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with high cover rate) may potentially be appropriate for targeting by qPCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) cause over-estimation of cover rate (%). If known in advance, exon ranking should be run by excluding it from the top5 genes.
 ```
-Before ex splicing varints
+Before ex splicing variants
 ******************************
 
     Target-specific exon search result
@@ -81,7 +81,7 @@ Before ex splicing varints
 ```
 
 ```
-After ex splicing varints
+After ex splicing variants
 ******************************
 
     Target-specific exon search result
