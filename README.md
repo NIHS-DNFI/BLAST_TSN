@@ -1,6 +1,6 @@
-# BLAST_TSG (Target-Specific Gene)
+# BLAST_TSN (Target-Specific Nucleotide sequence)
 ## Overview
-BLAST_TSG is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
+BLAST_TSN is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
 
 ## Requirement
 At the time of release, the related software was tested using the following versions:
@@ -97,7 +97,7 @@ After ex splicing variants
 ```
 
 ## License
-BLAST_TSG is licensed under GPL v3.0.
+BLAST_TSN is licensed under GPL v3.0.
 
 ## Citation
 In preparation.
