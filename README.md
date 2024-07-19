@@ -29,11 +29,12 @@ OG0001549	5	0	0	0	0	0	0	0	0	0	0	0	5
 OG0001616	5	0	0	0	0	0	0	0	0	0	0	0	5
 OG0001619	5	0	0	0	0	0	0	0	0	0	0	0	5
 ```
-### 2. BLAST for the non-target species to exclude the non-specific sequences.
-Extract target-specific sequence from target-specific genes. BLAST1 is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
+### 2. BLAST for the target species to extract target-specific sequences.
+Extract target-specific sequence from target-specific genes. BLAST is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST or later for other target species. 
 
-### 3. BLAST for target species to extract target-specific sequences.
-BLAST2 is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST3 or later for other target species. Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
+### 3. BLAST for the non-target species to exclude the non-specific sequences.
+BLAST is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
+Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
 
 ### 4. Rank the genes for the most target-specific sequences designed.
 After BLAST step, genes are ranked by the number of target-specific sequences, and record in ```./result.log```.
