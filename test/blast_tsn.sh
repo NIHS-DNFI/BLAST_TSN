@@ -463,7 +463,7 @@ awk \
     > ./exon_ranking/top5_cover_rate.txt
 
 awk \
-    'NR==FNR {top5[NR]=$1; next} {printf "%5s %10s %10s %10s %5s %5s %1s %5s\n", $1, $2, $3, $4, $5, $6, $7, top5[FNR]}' \
+    'NR==FNR {top5[NR]=$1; next} {printf "%5s %10s %10s %10s %5s %5s %1s %9s\n", $1, $2, $3, $4, $5, $6, $7, top5[FNR]}' \
     ./exon_ranking/top5_cover_rate.txt \
     ./exon_ranking/final_top5_exon_m90_individual_count_v2.txt \
     > ./final_exon_ranking.txt
@@ -480,7 +480,7 @@ echo \
 
     Target-specific exon search result
 
-    No. HIT Chromosome   Start      End      Protein ID   Theor Cover rate (%)
+    No. HIT Chromosome   Start      End      Protein ID   Theor.    Cover rate (%)
 $exon_ranking
 
 ******************************" \
