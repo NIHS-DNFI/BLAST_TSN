@@ -275,7 +275,7 @@ orthogroup=$(for f in 1 2 3 4 5
                     'gsub(".*cds_","")' \
                     ./gene_ranking/top5.txt \
                     | awk \
-                        'gsub("_.*","")' \
+                        'gsub("_[0-9]*$","")' \
                         | awk \
                             "NR==${f}" \
                             > ./gene_ranking/top5_${f}.txt
