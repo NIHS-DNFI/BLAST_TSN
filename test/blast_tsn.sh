@@ -167,7 +167,7 @@ fi
 #BLAST_1 for the reference genomes of the non-target-species
 blastn \
     -evalue 1e-2 \
-    -num_threads 48 \
+    -num_threads "$num" \
     -task blastn-short \
     -db "./IRGSP1.0_chr2 \
         ./IRGSP1.0_chr3 \
@@ -180,66 +180,28 @@ blastn \
         ./IRGSP1.0_chr10 \
         ./IRGSP1.0_chr11 \
         ./IRGSP1.0_chr12" \
-    -query ./target_specific_gene_cds_sliding_sequences.fasta \
-    -outfmt 7 \
-    -out ./blast_results/result_blast1.txt
-
-#grep 25 bp sliding sequences ID that do not hit the reference genome of the non-target-species
-grep \
-    -B 3 \
-    "# 0 hits found" \
-    ./blast_results/result_blast1.txt \
-    > ./blast_results/result_blast1_0_hit.txt
-
-grep \
-    "Query" \
-    ./blast_results/result_blast1_0_hit.txt \
-    | awk \
-        'gsub("# Query: ","")' \
-        > ./blast_results/result_blast1_0_hit_2.txt
-
-#grep 25 bp sliding sequences that do not hit the reference genome of the non-target-species
-grep \
-    -A 1 \
-    -f ./blast_results/result_blast1_0_hit_2.txt \
-    ./target_specific_gene_cds_sliding_sequences.fasta \
-    > ./blast_results/primer_candidate_blast1.txt
-
-#BLAST_2 for the reference genome of the target-species
-blastn \
-    -evalue 1e-2 \
-    -num_threads 48 \
-    -task blastn-short \
-    -db "./IRGSP1.0_chr1" \
-    -query ./blast_results/primer_candidate_blast1.txt \
+    -query ./blast_results/primer_candidate_target_specific_blast1.txt \
     -outfmt 7 \
     -out ./blast_results/result_blast2.txt
 
-#grep 25 bp sliding sequences ID that do not hit the reference genome of the target-species
+#grep 25 bp sliding sequences ID that do not hit the reference genome of the non-target-species
 grep \
     -B 3 \
     "# 0 hits found" \
     ./blast_results/result_blast2.txt \
     > ./blast_results/result_blast2_0_hit.txt
 
-#exclude 25 bp sliding sequences that do not hit the reference genome of the target-species
-grep \
-    -v \
-    -f ./blast_results/result_blast2_0_hit.txt \
-    ./blast_results/result_blast2.txt \
-    > ./blast_results/result_blast2_2.txt
-
 grep \
     "Query" \
-    ./blast_results/result_blast2_2.txt \
+    ./blast_results/result_blast2_0_hit.txt \
     | awk \
         'gsub("# Query: ","")' \
-        > ./blast_results/result_blast2_3.txt
+        > ./blast_results/result_blast2_0_hit_2.txt
 
-#grep 25 bp sliding sequences that hit the reference genome of the target-species
+#grep 25 bp sliding sequences that do not hit the reference genome of the non-target-species
 grep \
     -A 1 \
-    -f ./blast_results/result_blast2_3.txt \
+    -f ./blast_results/result_blast2_0_hit_2.txt \
     ./target_specific_gene_cds_sliding_sequences.fasta \
     > ./primer_candidate_target_specific_final.txt
 
