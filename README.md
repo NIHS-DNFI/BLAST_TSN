@@ -1,6 +1,6 @@
 # BLAST_TSN (Target-Specific Nucleotide sequence)
 ## Overview
-BLAST_TSN is a Bash script that semi-automatically searches for target-specific gene sequences based on data outputted from OrthoFinder (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
+BLAST_TSN is a Bash script that semi-automatically searches for target-specific gene sequences based on OrthoFinder output (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
 
 ## Requirement
 At the time of release, the related software was tested using the following versions:
@@ -16,8 +16,8 @@ At the time of release, the related software was tested using the following vers
 First, OrthiFinder is used to search for target-specific genes. Run OrthoFinder with amino acid sequences of target and non-target species as input files.
 
 ### BLAST_TSN part
-### 1. Extract the target-specific genes.
-The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` and ```Orthogroups.txt``` files from OrthoFinder. These files are generally outputted to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copied targets, increase the value at target species.
+### 1. Extract target-specific genes.
+The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` and ```Orthogroups.txt``` files from OrthoFinder. These files are generally output to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of the script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copy targets, increase the value for target species.
 ```
 Orthogroup	protein_Os01g_w0	protein_Os02g_w0	protein_Os03g_w0	protein_Os04g_w0	protein_Os05g_w0	protein_Os06g_w0	protein_Os07g_w0	protein_Os08g_w0	protein_Os09g_w0	protein_Os10g_w0	protein_Os11g_w0	protein_Os12g_w0	Total
 OG0000840	8	0	0	0	0	0	0	0	0	0	0	0	8
@@ -30,14 +30,14 @@ OG0001616	5	0	0	0	0	0	0	0	0	0	0	0	5
 OG0001619	5	0	0	0	0	0	0	0	0	0	0	0	5
 ```
 ### 2. BLAST for the target species to extract target-specific sequences.
-Extract target-specific sequence from target-specific genes. BLAST is performed for target species to extract target-specific sequences. Here, blastdb name that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST or later for other target species. 
+Extract target-specific sequence from target-specific genes. BLAST is performed on target species to extract target-specific sequences. The blastdb names that are target species should be specified in ```-db```. For group-specific sequence extraction, run BLAST on other target species. 
 
 ### 3. BLAST for the non-target species to exclude the non-specific sequences.
-BLAST is performed for non-target species to exclude non-specific sequences. Here, blastdb name that are non-target species should be specified in ```-db```.
-Finally, extracted candidate sequences of primers are recorded in ```./primer_candidates_target_specific_final.txt```.
+BLAST is performed on non-target species to exclude non-specific sequences. The blastdb names that are non-target species should be specified in ```-db```.
+Finally, the extracted primer candidate sequences are recorded in ```./primer_candidates_target_specific_final.txt```.
 
-### 4. Rank the genes for the most target-specific sequences designed.
-After BLAST step, genes are ranked by the number of target-specific sequences, and record in ```./result.log```.
+### 4. Rank genes with a large number of target-specific sequences.
+After the BLAST step, genes are ranked by the number of target-specific sequences, and recorded in ```./result.log```.
 ```
 ******************************
 
@@ -63,8 +63,8 @@ After BLAST step, genes are ranked by the number of target-specific sequences, a
 ******************************
 ```
 
-### 5. Rank the exons for the most target-specific sequences designed.
-Finally, extract the exon sequences of the top 5 genes and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with high cover rate) may potentially be appropriate for targeting by qPCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) cause over-estimation of cover rate (%). If known in advance, exon ranking should be run by excluding it from the top5 genes.
+### 5. Rank the exons with a large number of target-specific sequences.
+Finally, the exon sequences of the top 5 genes are extracted and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with a high cover rate) are potentially suitable for targeting by qPCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) will lead to an over-estimation of the cover rate (%). If known in advance, exon ranking should be run by excluding them from the top5 genes.
 ```
 Before ex splicing variants
 ******************************
