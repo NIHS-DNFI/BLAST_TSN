@@ -1,6 +1,6 @@
 # BLAST_TSN (Target-Specific Nucleotide sequence)
 ## Overview
-BLAST_TSN is a Bash script that semi-automatically searches for target-specific gene sequences based on OrthoFinder output (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences.
+BLAST_TSN is a Bash script that semi-automatically searches for target-specific gene sequences based on OrthoFinder output (https://github.com/davidemms/OrthoFinder). Users can target organisms that already have genome assemblies, assisting them in the search for target-specific gene sequences. The target-specific gene sequences can be applied to various genetic applications, including the discovery of genetic markers and the development of PCR tests.
 
 ## Requirement
 At the time of release, the related software was tested using the following versions:
@@ -64,7 +64,7 @@ After the BLAST step, genes are ranked by the number of target-specific sequence
 ```
 
 ### 5. Rank the exons with a large number of target-specific sequences.
-Finally, the exon sequences of the top 5 genes are extracted and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with a high cover rate) are potentially suitable for targeting by qPCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) will lead to an over-estimation of the cover rate (%). If known in advance, exon ranking should be run by excluding them from the top5 genes.
+Finally, the exon sequences of the top 5 genes are extracted and ranked by the number of target-specific sequences. The exons with primer candidates designed over their full length (i.e. with a high cover rate) are potentially suitable for targeting by PCR. Note that, splicing variants that share the same exons (e.g. BAS70124.1, BAS70126.1 and BAS70127.1) will lead to an over-estimation of the cover rate (%). If known in advance, exon ranking should be run by excluding them from the top5 genes.
 ```
 Before ex splicing variants
 ******************************
