@@ -101,4 +101,6 @@ After ex splicing variants
 BLAST_TSN is licensed under GPL v3.0.
 
 ## Citation
-In preparation.
+Please cite the [following paper](https://pubs.acs.org/doi/10.1021/acsagscitech.4c00661) when you using BLAST_TSN.
+
+_ACS Agric. Sci. Technology., 2025, 5, 750-762_
