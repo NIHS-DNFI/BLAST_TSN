@@ -180,7 +180,7 @@ blastn \
         ./IRGSP1.0_chr10 \
         ./IRGSP1.0_chr11 \
         ./IRGSP1.0_chr12" \
-    -query ./blast_results/primer_candidate_target_specific_blast1.txt \
+    -query ./blast_results/target_specific_gene_cds_sliding_sequences.fasta \
     -outfmt 7 \
     -out ./blast_results/result_blast2.txt
 
