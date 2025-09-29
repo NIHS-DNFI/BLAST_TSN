@@ -104,3 +104,6 @@ BLAST_TSN is licensed under GPL v3.0.
 Please cite the [following paper](https://pubs.acs.org/doi/10.1021/acsagscitech.4c00661) when using BLAST_TSN.
 
 _ACS Agric. Sci. Technology., 2025, 5, 750-762_
+
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="K4AeHBrv5Y9lSyfbTTpJBVExt4Ob8evaQoKIHue7TdU" />
