@@ -1,3 +1,6 @@
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="K4AeHBrv5Y9lSyfbTTpJBVExt4Ob8evaQoKIHue7TdU" />
+
 # BLAST_TSN (Target-Specific Nucleotide sequence)
 ## Overview
 BLAST_TSN is a Bash script that semi-automatically searches for target-specific gene sequences based on OrthoFinder output (https://github.com/davidemms/OrthoFinder). It allows users to target organisms with existing genome assemblies, facilitating the identification of target-specific gene sequences. These sequences can be applied to various genetic applications, including the discovery of genetic markers and the development of PCR tests.
@@ -105,5 +108,4 @@ Please cite the [following paper](https://pubs.acs.org/doi/10.1021/acsagscitech.
 
 _ACS Agric. Sci. Technology., 2025, 5, 750-762_
 
-<!-- Google Search Console verification -->
-<meta name="google-site-verification" content="K4AeHBrv5Y9lSyfbTTpJBVExt4Ob8evaQoKIHue7TdU" />
+
