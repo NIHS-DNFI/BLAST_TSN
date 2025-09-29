@@ -1,5 +1,3 @@
-<!-- Google Search Console verification -->
-<meta name="google-site-verification" content="K4AeHBrv5Y9lSyfbTTpJBVExt4Ob8evaQoKIHue7TdU" />
 
 # BLAST_TSN (Target-Specific Nucleotide sequence)
 ## Overview
