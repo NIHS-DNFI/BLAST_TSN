@@ -14,11 +14,11 @@ At the time of release, the related software was tested using the following vers
 
 ## Usage
 ### OrthoFinder part
-First, OrthiFinder is used to search for target-specific genes. Run OrthoFinder with amino acid sequences of target and non-target species as input files.
+First, OrthoFinder is used to search for target-specific genes. Run OrthoFinder with amino acid sequences of target and non-target species as input files.
 
 ### BLAST_TSN part
 ### 1. Extract target-specific genes.
-The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` and ```Orthogroups.txt``` files from OrthoFinder. These files are generally output to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 7 of the script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copy targets, increase the value for target species.
+The target-specific genes are extracted using ```Orthogroups.GeneCount.tsv``` and ```Orthogroups.txt``` files from OrthoFinder. These files are generally output to ```/OrthoFinder/Result_XX/Orthogroups/```. Change line 18 of the script to ```$X==0``` for the non-target species, and ```$X>=2``` for the target species, depending on your data. If you need high-copy targets, increase the value for target species.
 ```
 Orthogroup	protein_Os01g_w0	protein_Os02g_w0	protein_Os03g_w0	protein_Os04g_w0	protein_Os05g_w0	protein_Os06g_w0	protein_Os07g_w0	protein_Os08g_w0	protein_Os09g_w0	protein_Os10g_w0	protein_Os11g_w0	protein_Os12g_w0	Total
 OG0000840	8	0	0	0	0	0	0	0	0	0	0	0	8
